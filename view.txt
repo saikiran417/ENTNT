@@ -1,0 +1,19 @@
+import React from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+
+function CalendarView() {
+  const events = [
+    { title: "Meeting with ABC Corp", date: "2025-01-05" },
+    { title: "Follow-up XYZ Inc.", date: "2025-01-06" },
+  ];
+
+  return (
+    <div className="p-4">
+      <h2 className="text-2xl font-bold">Calendar View</h2>
+      <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" events={events} />
+    </div>
+  );
+}
+
+export default CalendarView;

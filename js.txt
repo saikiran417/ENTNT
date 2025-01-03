@@ -1,0 +1,27 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AdminModule from "./components/AdminModule";
+import UserDashboard from "./components/UserDashboard";
+import CalendarView from "./components/CalendarView";
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <nav className="bg-gray-800 text-white p-4">
+          <a href="/admin" className="mr-4">Admin</a>
+          <a href="/dashboard" className="mr-4">Dashboard</a>
+          <a href="/calendar">Calendar</a>
+        </nav>
+        <Routes>
+          <Route path="/admin" element={<AdminModule />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
+          <Route path="/calendar" element={<CalendarView />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+npm run build
